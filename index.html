@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      background-color: #fff;
+      margin-top: 60px;
+      padding: 30px;
+      border-radius: 12px;
+      width: 75%;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      margin-bottom: 25px;
+    }
+    .bio {
+      text-align: left;
+      font-size: 16px;
+      color: #2c3e50;
+    }
+    h1 {
+      color: #e74c3c;
+    }
+    .btn {
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 17px;
+      margin-top: 30px;
+    }
+    .btn:hover {
+      background-color: #16a085;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Profile</h1>
+    <div class="bio">
+      <p><strong>Name:</strong> <span id="name">[Your Name]</span></p>
+      <p><strong>Education:</strong> <span id="education">[Your Education]</span></p>
+      <p><strong>Interests:</strong> <span id="interests">[Your Interests]</span></p>
+    </div>
+    <img class="profile-img" id="profileImage" src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile Picture">
+    <button class="btn" onclick="updateBio()">Update Bio</button>
+  </div>
+
+  <script>
+    function updateBio() {
+      let name = prompt("Enter your name:");
+      let education = prompt("Enter your education:");
+      let interests = prompt("Enter your interests:");
+      let imageUrl = prompt("Enter the URL of your profile image:");
+
+      if (name && education && interests && imageUrl) {
+        alert(`Name: ${name}\nEducation: ${education}\nInterests: ${interests}`);
+        console.log(`Name: ${name}, Education: ${education}, Interests: ${interests}, Image URL: ${imageUrl}`);
+        
+        // Updating the content on the page
+        document.getElementById("name").textContent = name;
+        document.getElementById("education").textContent = education;
+        document.getElementById("interests").textContent = interests;
+        document.getElementById("profileImage").src = imageUrl;
+      } else {
+        alert("Please fill in all the details.");
+      }
+    }
+  </script>
+</body>
+</html>
